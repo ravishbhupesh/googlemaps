@@ -15,14 +15,32 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity
-            android:name=".activity.GoogleMapsActivity"
-            android:label="@string/title_activity_google_maps">
+        <activity android:name=".activity.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".activity.MapsMarkerActivity"
+            android:label="@string/title_activity_google_maps" />
+        <activity
+            android:name=".activity.MyLocationActivity"
+            android:label="@string/title_activity_my_location" />
+        <activity
+            android:name=".activity.LastKnownLocationActivity"
+            android:label="@string/title_activity_last_known_location" />
+        <activity
+            android:name=".activity.LocTrackActivity"
+            android:label="@string/title_activity_loc_track" />
+
+        <service
+            android:name=".FetchAddressIntentService"
+            android:exported="false" />
+        <service
+            android:name=".service.FetchAddressIntentService"
+            android:exported="false"></service>
     </application>
 
 </manifest>

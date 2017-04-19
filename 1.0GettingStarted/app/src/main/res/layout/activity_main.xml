@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="br.learn.maps.activity.MainActivity">
+
+    <Button
+        android:id="@+id/button_add_map_marker"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="@string/button_add_map_marker" />
+
+    <Button
+        android:id="@+id/button_show_my_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_show_your_location" />
+
+    <Button
+        android:id="@+id/button_last_known_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_last_location" />
+
+    <Button
+        android:id="@+id/button_track_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_track_location" />
+</GridLayout>

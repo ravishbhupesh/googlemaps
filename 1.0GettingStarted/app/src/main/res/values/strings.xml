@@ -1,4 +1,20 @@
 <resources>
     <string name="app_name">1.0GettingStarted</string>
-    <string name="title_activity_google_maps">Map</string>
+    <string name="title_activity_google_maps">Map with Marker</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="button_add_map_marker">Map with Marker</string>
+    <string name="button_show_your_location">Show my location button</string>
+    <string name="button_last_location">Last known location</string>
+    <string name="button_track_location">Track the location</string>
+
+
+    <string name="title_activity_my_location">Map</string>
+
+    <string name="location_permission_denied">Permission Denied</string>
+    <string name="permission_required_toast">Permission Required</string>
+    <string name="permission_rationale_location">Permission Rational Location</string>
+    <string name="title_activity_last_known_location">Map</string>
+    <string name="title_activity_loc_track">Map</string>
+
 </resources>

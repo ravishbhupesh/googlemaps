@@ -4,21 +4,23 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
+import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 
 import br.learn.maps.R;
 
-public class GoogleMapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsMarkerActivity extends FragmentActivity implements OnMapReadyCallback {
 
-    private static final String TAG = GoogleMapsActivity.class.getSimpleName();
+    private static final String TAG = MapsMarkerActivity.class.getSimpleName();
 
-    private GoogleMap mMap;
+    private GoogleMap googleMap;
     private UiSettings mUiSettings;
 
     @Override
@@ -46,18 +48,23 @@ public class GoogleMapsActivity extends FragmentActivity implements OnMapReadyCa
     public void onMapReady(GoogleMap googleMap) {
         Log.d(TAG, "onCreate");
 
-        mMap = googleMap;
-        mUiSettings = mMap.getUiSettings();
+        this.googleMap = googleMap;
+
+        mUiSettings = this.googleMap.getUiSettings();
         mUiSettings.setCompassEnabled(true);
         mUiSettings.setMyLocationButtonEnabled(true);
         mUiSettings.setZoomControlsEnabled(true);
         mUiSettings.setZoomGesturesEnabled(true);
         mUiSettings.setMapToolbarEnabled(true);
 
-        // Add a marker in Sydney and move the camera
-        LatLng utrecht = new LatLng(52, 5);
+        // Add a marker in Utrecht and move the camera
+        LatLng utrecht = new LatLng(52.092876, 5.104480);
         MarkerOptions mo = new MarkerOptions().position(utrecht).title("Marker in Utrecht");
-        mMap.addMarker(mo);
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(utrecht));
+        this.googleMap.addMarker(mo);
+
+        CameraPosition cameraPosition = new CameraPosition.Builder()
+                .target(utrecht)
+                .zoom(15).build();
+        this.googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(cameraPosition));
     }
 }
